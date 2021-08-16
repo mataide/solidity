@@ -1,7 +1,7 @@
 // deploy code will go here
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const Web3 = require('web3');
-const contractFile = require('./compile');
+const contractFile = require('./compile-inbox');
 const bytecode = contractFile.evm.bytecode.object;
 const abi = contractFile.abi;
 

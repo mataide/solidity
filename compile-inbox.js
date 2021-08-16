@@ -3,7 +3,6 @@ const fs = require('fs');
 const solc = require('solc');
  
 const contractPath = path.resolve(__dirname, 'contracts','Inbox.sol');
-console.log('contractPath: ', contractPath);
 
 const source = fs.readFileSync(contractPath, 'utf8');
 const input = {
@@ -24,6 +23,6 @@ const input = {
 const tempFile = JSON.parse(solc.compile(JSON.stringify(input)));
 console.log(tempFile);
 const contractFile = tempFile.contracts['Inbox.sol']['Inbox'];
-// console.log(contractFile);
+console.log(contractFile);
 module.exports = contractFile;
 // console.log(solc.compile(source,1));
