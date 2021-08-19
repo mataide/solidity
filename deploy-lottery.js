@@ -4,6 +4,7 @@ const Web3 = require('web3');
 const contractFile = require('./compile-lottery');
 const bytecode = contractFile.evm.bytecode.object;
 const abi = contractFile.abi;
+const util = require('util');
 
 const provider = new HDWalletProvider(
     'denial burger rain private jealous excess panther include either cancel blade adjust',
@@ -19,6 +20,7 @@ const deploy = async () => {
     .send({from: accounts[0], gas: '1000000'});
 
     console.log('Contract deployed to', result.options.address);
+    console.log(util.inspect(abi, {showHidden: false, depth: null, colors: true}));
 }
 
 deploy();
